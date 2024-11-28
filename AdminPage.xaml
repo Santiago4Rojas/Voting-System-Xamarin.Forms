@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JRojas.AdminPage"
+             BackgroundColor="#E8F4F8"
+             Padding="20">
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="Center">
+        <!-- Título -->
+        <Label Text="Zona Administrativa" 
+               FontFamily="Arial Black"
+               FontSize="30"
+               HorizontalOptions="Center"
+               TextColor="#2E4A62" />
+
+        <Entry x:Name="usernameEntry" 
+       Placeholder="Usuario" 
+       FontSize="Medium" 
+       TextColor="Black" 
+       PlaceholderColor="Gray" />
+
+        <!-- Entrada de contraseña -->
+        <Entry x:Name="passwordEntry" 
+       Placeholder="Contraseña" 
+       IsPassword="True" 
+       FontSize="Medium" 
+       TextColor="Black" 
+       PlaceholderColor="Gray" />
+
+        <StackLayout Spacing="15" VerticalOptions="End">
+            <!-- Botones con bordes redondeados -->
+            <Button Text="Login" 
+                    Clicked="OnLoginClicked"
+                    FontSize="Medium"
+                    CommandParameter="A"
+                    TextColor="White"
+                    BackgroundColor="#32CD32"  
+                    CornerRadius="20" 
+                    HeightRequest="50" 
+                    Margin="10,0"/>
+
+            <Button Text="Register" 
+                    Clicked="OnRegisterClicked"
+                    FontSize="Medium"
+                    CommandParameter="B"
+                    TextColor="White"
+                    BackgroundColor="#32CD32"  
+                    CornerRadius="20" 
+                    HeightRequest="50" 
+                    Margin="10,0"/>
+
+            <Button Text="Cancel"
+                    Clicked="OnCancelClicked"
+                    FontSize="Medium"
+                    CommandParameter="C"
+                    TextColor="White"
+                    BackgroundColor="#32CD32"  
+                    CornerRadius="20" 
+                    HeightRequest="50" 
+                    Margin="10,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

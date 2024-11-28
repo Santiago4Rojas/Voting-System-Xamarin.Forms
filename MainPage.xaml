@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JRojas.MainPage"
+             BackgroundColor="#f0f8ff"
+             Padding="20">
+
+    <StackLayout Padding="20" Spacing="15" VerticalOptions="Center" HorizontalOptions="Center">
+        <!-- Mensaje de bienvenida -->
+        <Label Text="Bienvenido al sistema de votación" 
+               FontSize="30" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#2E4A62" />
+        <!-- Color moderno para el texto -->
+
+        <!-- Cuadrado con texto FET -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="FET" FontSize="150" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#34C759" />
+        </StackLayout>
+
+        <Label Text="Selecciona de qué sección formas parte" 
+               FontSize="18" 
+               HorizontalOptions="Center" 
+               TextColor="#2E4A62" />
+
+        <StackLayout VerticalOptions="End" Spacing="20">
+            <!-- Botones con bordes redondeados y sombra -->
+            <Button Text="Estudiantes" 
+                    FontSize="Medium"
+                    CommandParameter="A"
+                    TextColor="White"
+                    BackgroundColor="#32CD32" 
+                    CornerRadius="20" 
+                    HeightRequest="50" 
+                    Clicked="OnStudentClicked"
+                    Margin="10,0"/>
+
+            <Button Text="Docentes" 
+                    FontSize="Medium"
+                    CommandParameter="B"
+                    TextColor="White"
+                    BackgroundColor="#32CD32"
+                    CornerRadius="20" 
+                    HeightRequest="50"
+                    Clicked="OnTeacherClicked" 
+                    Margin="10,0"/>
+
+            <Button Text="Administrativos" 
+                    FontSize="Medium"
+                    CommandParameter="C"
+                    TextColor="White"
+                    BackgroundColor="#32CD32"
+                    CornerRadius="20" 
+                    HeightRequest="50" 
+                    Clicked="OnAdminClicked"
+                    Margin="10,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

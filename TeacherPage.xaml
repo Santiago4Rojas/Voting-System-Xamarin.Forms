@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JRojas.TeacherPage"
+             BackgroundColor="#E8F4F8"
+             Padding="20">
+
+    <StackLayout Padding="20" Spacing="15" VerticalOptions="Start" HorizontalOptions="Center">
+        <!-- Título -->
+        <Label Text="Zona de votación para profesores" 
+               FontFamily="Arial Black"
+               FontSize="26"
+               HorizontalOptions="Center"
+               TextColor="#2E4A62" />
+
+        <!-- Entrada para número de documento -->
+        <Label Text="Ingresa tu número de documento:" FontSize="Medium" TextColor="Black" />
+            <Entry x:Name="documentNumberEntry"
+                Placeholder="Número de Documento"
+                Keyboard="Numeric"
+                MaxLength="10"
+                FontSize="Medium" 
+                TextColor="Black" 
+                PlaceholderColor="Gray" 
+                HeightRequest="45" />
+
+        <!-- Selector de programa -->
+        <Label Text="Selecciona el programa al que perteneces:" FontSize="Medium" TextColor="Black" />
+        <Picker x:Name="programPicker"
+                Title="Seleccione su programa" 
+                TitleColor="Gray"
+                TextColor="Black"
+                HeightRequest="45">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Software</x:String>
+                    <x:String>Alimentos</x:String>
+                    <x:String>Electrica</x:String>
+                    <x:String>Seguridad y Salud</x:String>
+                    <x:String>Mercados Digitales</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Selecciona tu candidato:" 
+               FontSize="Large" 
+               FontFamily="Arial Black" 
+               TextColor="Black" />
+
+        <!-- CollectionView con borde redondeado -->
+        <CollectionView x:Name="candidatesCollectionView"
+                        SelectionMode="Single" 
+                        SelectionChanged="OnCandidateSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                        <Image Source="{Binding ImagePath}" 
+                               WidthRequest="60" 
+                               HeightRequest="60" 
+                               Aspect="AspectFill"/>
+                        <!-- Imágenes redondeadas -->
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Label Text="{Binding Name}" FontSize="Medium" TextColor="Black" />
+                            <Label Text="{Binding Position}" FontSize="Small" TextColor="Gray" />
+                        </StackLayout>
+                        <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" 
+                                  VerticalOptions="Center" 
+                                  CheckedChanged="OnVoteCheckedChanged" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botón con bordes redondeados -->
+        <Button Text="Registrar Voto" 
+                FontFamily="Arial Black" 
+                FontSize="Medium"
+                Clicked="OnRegisterVoteClicked"
+                BackgroundColor="#32CD32"
+            CornerRadius="20" 
+                TextColor="White" 
+                HeightRequest="50" 
+                Margin="10,0" />
+    </StackLayout>
+</ContentPage>

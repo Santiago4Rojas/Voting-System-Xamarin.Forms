@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JRojas.AdminDashboardPage"
+             BackgroundColor="#E8F4F8"
+             Padding="20">
+
+    <StackLayout Padding="20" Spacing="20">
+        <!-- Título -->
+        <Label Text="Dashboard del Administrador" 
+               FontFamily="Arial Black"
+               FontSize="30"
+               HorizontalOptions="Center"
+               TextColor="#2E4A62" />
+
+        <!-- Entrada para el nombre del candidato -->
+        <Entry x:Name="CandidateNameEntry" 
+               Placeholder="Nombre del Candidato" 
+               PlaceholderColor="Gray"
+               TextColor="Black"
+               HeightRequest="45" 
+               Margin="0,10" />
+
+        <!-- Entrada para la posición del candidato -->
+        <Entry x:Name="CandidatePositionEntry" 
+               Placeholder="Posición" 
+               PlaceholderColor="Gray"
+               TextColor="Black"               HeightRequest="45" 
+               Margin="0,10" />
+
+        <!-- Selector para determinar la visibilidad del candidato -->
+        <Picker x:Name="VisibilityPicker" 
+                Title="Seleccionar Visibilidad" 
+                TitleColor="Gray"
+                HeightRequest="45" 
+                Margin="0,10"
+                TextColor="Black">
+            <Picker.Items>
+                <x:String>Student</x:String>
+                <x:String>Teacher</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <!-- Botón para seleccionar foto -->
+        <Button Text="Seleccionar Foto" 
+                Clicked="OnSelectPhotoClicked" 
+                BackgroundColor="#32CD32"
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="50"
+                Margin="0,10" />
+
+        <!-- Imagen seleccionada -->
+        <Image x:Name="SelectedImage" 
+               HeightRequest="100" 
+               WidthRequest="100"
+               Aspect="AspectFill" 
+               Margin="0,10" />
+
+        <!-- Botón para agregar candidato -->
+        <Button Text="Agregar Candidato" 
+                Clicked="OnAddCandidateClicked"
+                BackgroundColor="#32CD32" 
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="50" 
+                Margin="0,10" />
+    </StackLayout>
+</ContentPage>
+

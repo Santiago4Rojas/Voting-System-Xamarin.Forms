@@ -1,0 +1,43 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             BackgroundColor="#E8F4F8"
+             x:Class="JRojas.Counter">
+
+    <StackLayout Padding="10">
+        <!-- Votos Estudiantes -->
+        <Label x:Name="StudentVoteCountLabel" 
+               Text="Votos Estudiantes:" 
+               FontFamily="Arial Black"
+               FontSize="30"
+               HorizontalOptions="Center"       
+               TextColor="#2E4A62"/>
+        
+        <!-- Votos Profesores -->
+        <Label x:Name="TeacherVoteCountLabel" 
+               Text="Votos Profesores:"
+               FontFamily="Arial Black"
+               FontSize="30"   
+               HorizontalOptions="Center"       
+               TextColor="#2E4A62"/>
+        
+        <!-- Botón para actualizar los votos -->
+        <Button Text="Actualizar Votos" 
+                Clicked="OnUpdateVoteCountClicked" 
+                BackgroundColor="#32CD32"
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="50"
+                Margin="0,10" />
+
+        <!-- Mostrar Candidatos -->
+        <Label Text="Candidatos:" />
+        <ListView x:Name="CandidateListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Position}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
